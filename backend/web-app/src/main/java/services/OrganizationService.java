@@ -2,30 +2,59 @@ package services;
 
 import java.util.ArrayList;
 
-import class_models.Organization;
+import Utility.DataCollectionManager;
+import classModels.Organization;
 
 public class OrganizationService {
   
-  private ArrayList<Organization> organizations;
+  private DataCollectionManager collectionManager;
 
   public OrganizationService() {
 
   }
 
-  public OrganizationService(ArrayList<Organization> organizations) {
-    this.organizations = organizations;
+  public OrganizationService(DataCollectionManager collectionManager) {
+
+    this.collectionManager = collectionManager;
   }
 
-  public void addOrganization(Organization organization) {
-    this.organizations.add(organization);
+  public DataCollectionManager getCollectionManager() {
+
+    return this.collectionManager;
   }
 
-  public ArrayList<Organization> getOrganizations() {
-    return this.organizations;
+  public void setCollectionManager(DataCollectionManager collectionManager) {
+    this.collectionManager = collectionManager;
   }
 
-  public void setOrganizations(ArrayList<Organization> organizations) {
-    this.organizations = organizations;
+  public ArrayList<Organization> getAllOrganizations() {
+
+    return collectionManager.getOrganizations();
+  }
+
+  public Organization getOrganizationById(int orgId) {
+
+    return collectionManager.getOrganizationById(orgId);
+  }
+  
+  public Organization getOrganizationByName(String name) {
+
+    return collectionManager.getOrganizationByName(name);
+  }
+
+  public boolean addOrganization(Organization organization) {
+
+    return collectionManager.addOrganization(organization);
+  }
+
+  public boolean deleteOrganization(String name) {
+
+    return collectionManager.deleteOrganization(name);
+  }
+
+  public boolean updateOrganization(String oldName, String newName, String newDescription, String newLogo) {
+
+    return collectionManager.updateOrganization(oldName, newName, newDescription, newLogo);
   }
 
 }

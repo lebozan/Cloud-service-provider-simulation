@@ -1,0 +1,6 @@
+[ {
+  "name" : "kategorija1",
+  "numberOfCores" : 4,
+  "gbsOfRam" : 8,
+  "gpuCores" : 0
+} ]

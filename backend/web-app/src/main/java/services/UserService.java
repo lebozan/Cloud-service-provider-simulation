@@ -1,77 +1,80 @@
 package services;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import class_models.User;
+import Utility.DataCollectionManager;
+import classDTOs.UserDTO;
+import classModels.Role;
+import classModels.User;
 
 public class UserService {
-	
-	private ArrayList<User> userList;
-	
+
+	private DataCollectionManager collectionManager;
+
 
 	public UserService() {
 	}
 
-	public UserService(ArrayList<User> users) {
-		this();
-		this.userList = users;
+	public UserService(DataCollectionManager collectionManager) {
+
+		this.collectionManager = collectionManager;
 	}
 
+	public DataCollectionManager getCollectionManager() {
 
-	public List<User> getAllUsers() {
-
-		return getUserList();
+		return this.collectionManager;
 	}
 
-	public User getUser(String email) {
-		for (User user : this.userList) {
-			if (user.getEmail().equals(email)) {
-				return user;
-			}
-		}
-
-		return null;
+	public void setCollectionManager(DataCollectionManager collectionManager) {
+		this.collectionManager = collectionManager;
 	}
 
-	public boolean updateUser(int id, String email, String firstname, String lastname, String password) {
-		for (User user : userList) {
-			if (user.getId() == id) {
-				user.setId(id);
-				user.setEmail(email);
-				user.setFirstName(firstname);
-				user.setLastName(lastname);
-				user.setPassword(password);
-				return true;
-			}
-		} 
+	public ArrayList<User> getAllUsers() {
 
-		return false;
+		return collectionManager.getUsers();
 	}
 
-	public boolean deleteUser(int id) {
-		for (User user : this.userList) {
-			if (user.getId() == id) {
-				this.userList.remove(user);
-				return true;
-			}
-		}
+	public ArrayList<UserDTO> getAllUserDTOs() {
 
-		return false;
+		return collectionManager.getUserDTOs();
 	}
 
-	public User addNewUser(User user) {
-		this.getUserList().add(user);
-		return user;
+	public User getUserByEmail(String email) {
+
+		return collectionManager.getUserByEmail(email);
 	}
 
+	public User getUserById(int userId) {
 
-	public ArrayList<User> getUserList() {
-		return this.userList;
+		return collectionManager.getUserById(userId);
 	}
 
-	public void setUserList(ArrayList<User> userList) {
-		this.userList = userList;
+	public ArrayList<UserDTO> getUsersFromOrg(int orgId) {
+
+		return collectionManager.getUsersFromOrg(orgId);
+	}
+
+	public boolean updateUser(String oldEmail, String newEmail, String firstname, String lastname, String password, Role role) {
+		return collectionManager.updateUser(oldEmail, newEmail, firstname, lastname, password, role);
+	}
+
+	public boolean updatePassword(int userId, String newPassword) {
+		return collectionManager.updateUserPassword(userId, newPassword);
+	}
+
+	public boolean deleteUserById(int id) {
+
+		return collectionManager.deleteUserById(id);
+	}
+
+	public boolean deleteUserByEmail(String email) {
+
+		return collectionManager.deleteUserByEmail(email);
+	}
+
+	public boolean addUser(User user) {
+
+		return collectionManager.addUser(user);
 	}
 
 

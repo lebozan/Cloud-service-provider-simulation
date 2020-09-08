@@ -1,0 +1,76 @@
+[ {
+  "id" : 1,
+  "name" : "virtualna 1",
+  "category" : {
+    "name" : "kategorija1",
+    "numberOfCores" : 4,
+    "gbsOfRam" : 8,
+    "gpuCores" : 0
+  },
+  "numberOfCores" : 4,
+  "gbsOfRam" : 8,
+  "gpuCores" : 0,
+  "drives" : [ {
+    "driveType" : "HDD",
+    "capacity" : 500,
+    "virtualMachineId" : 1,
+    "driveId" : 1,
+    "driveName" : "Disk1"
+  }, {
+    "driveType" : "SSD",
+    "capacity" : 480,
+    "virtualMachineId" : 1,
+    "driveId" : 2,
+    "driveName" : "Disk2"
+  } ]
+}, {
+  "id" : 2,
+  "name" : "virtualna 2",
+  "category" : {
+    "name" : "kategorija2",
+    "numberOfCores" : 8,
+    "gbsOfRam" : 16,
+    "gpuCores" : 4
+  },
+  "numberOfCores" : 8,
+  "gbsOfRam" : 16,
+  "gpuCores" : 4,
+  "drives" : [ {
+    "driveType" : "HDD",
+    "capacity" : 1000,
+    "virtualMachineId" : 2,
+    "driveId" : 3,
+    "driveName" : "Disk3"
+  }, {
+    "driveType" : "SSD",
+    "capacity" : 250,
+    "virtualMachineId" : 2,
+    "driveId" : 4,
+    "driveName" : "Disk4"
+  } ]
+}, {
+  "id" : 3,
+  "name" : "virtualna 3",
+  "category" : {
+    "name" : "kategorija2",
+    "numberOfCores" : 8,
+    "gbsOfRam" : 16,
+    "gpuCores" : 4
+  },
+  "numberOfCores" : 8,
+  "gbsOfRam" : 16,
+  "gpuCores" : 4,
+  "drives" : [ {
+    "driveType" : "HDD",
+    "capacity" : 2000,
+    "virtualMachineId" : 3,
+    "driveId" : 5,
+    "driveName" : "Disk5"
+  }, {
+    "driveType" : "SSD",
+    "capacity" : 480,
+    "virtualMachineId" : 3,
+    "driveId" : 6,
+    "driveName" : "Disk6"
+  } ]
+} ]

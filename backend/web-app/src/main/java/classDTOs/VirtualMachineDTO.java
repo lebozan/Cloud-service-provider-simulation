@@ -1,0 +1,7 @@
+package classDTOs;
+
+class VirtualMachineDTO {
+  
+  
+
+}

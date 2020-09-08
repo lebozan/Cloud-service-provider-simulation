@@ -1,0 +1,28 @@
+[ {
+  "userId" : 1,
+  "email" : "superadmin@mail.com",
+  "firstName" : "Bojan",
+  "lastName" : "Cakic",
+  "password" : "Superadmin123",
+  "role" : "SUPER_ADMIN",
+  "organizationId" : -1,
+  "activities" : null
+}, {
+  "userId" : 2,
+  "email" : "admin@mail.com",
+  "firstName" : "Nikola",
+  "lastName" : "Nikolic",
+  "password" : "Admin123",
+  "role" : "ADMIN",
+  "organizationId" : 1,
+  "activities" : null
+}, {
+  "userId" : 3,
+  "email" : "user@mail.com",
+  "firstName" : "Petar",
+  "lastName" : "Petrovic",
+  "password" : "User123123",
+  "role" : "USER",
+  "organizationId" : 1,
+  "activities" : null
+} ]
